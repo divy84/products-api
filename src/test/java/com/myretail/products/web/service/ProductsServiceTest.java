@@ -41,7 +41,7 @@ public class ProductsServiceTest {
 
         PricingResponseDTO pricingResponseDTOMock = new PricingResponseDTO();
         pricingResponseDTOMock.setValue(17.79);
-        pricingResponseDTOMock.setCurrencyCode("EURO");
+        pricingResponseDTOMock.setCurrencyCode("USD");
 
         ProductResponseDTO productResponseDTOMock = new ProductResponseDTO();
         productResponseDTOMock.setName("Superbad (Blu-ray)");
@@ -49,7 +49,7 @@ public class ProductsServiceTest {
         productResponseDTOMock.setPricingResponseDTO(pricingResponseDTOMock);
 
         ProductEntity productEntityMock = new ProductEntity();
-        productEntityMock.setRetail(17.49);
+        productEntityMock.setRetail(17.79);
         productEntityMock.setCurrencyCode("USD");
 
         String productDescMock = "Superbad (Blu-ray)";
@@ -59,9 +59,6 @@ public class ProductsServiceTest {
         when(productInfo.getProductInfo(11298850L)).thenReturn(productEntityMock);
 
         assertTrue(areProductsEqual(productResponseDTOMock , productsService.getProductDetails(11298850L)));
-
-        assertTrue(isProductPricingEqual(productEntityMock , productInfo.getProductInfo(11298850L)));
-
     }
 
     private boolean areProductsEqual(ProductResponseDTO p1, ProductResponseDTO p2) {
@@ -69,22 +66,7 @@ public class ProductsServiceTest {
         long a = p1.getId();
         long b = p2.getId();
 
-        if(a == b && p1.getName().equals((p2.getName())) )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private boolean isProductPricingEqual(ProductEntity p1, ProductEntity p2) {
-
-        Double a = p1.getRetail();
-        Double b = p2.getRetail();
-
-        if(a == b && p1.getCurrencyCode().equals((p2.getCurrencyCode())) )
+        if(a == b &&  p1.getName().equals((p2.getName())) && p1.getPricingResponseDTO().getCurrencyCode().equals(p2.getPricingResponseDTO().getCurrencyCode()))
         {
             return true;
         }

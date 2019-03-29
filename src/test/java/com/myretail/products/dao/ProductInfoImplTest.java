@@ -25,6 +25,7 @@ public class ProductInfoImplTest {
     @Mock
     ProductEntity productEntity;
 
+
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
@@ -41,7 +42,7 @@ public class ProductInfoImplTest {
 
         when(productRepository.findByProductId(11298850L)).thenReturn(productEntityMock);
 
-        assertTrue(isProductPricingEqual(productEntityMock , productRepository.findByProductId(11298850L)));
+        assertTrue(isProductPricingEqual(productEntityMock , productInfo.getProductInfo(11298850L)));
 
     }
 
