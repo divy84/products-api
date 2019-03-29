@@ -1,0 +1,53 @@
+buildscript
+        {
+            ext {
+                springBootVersion = '2.0.2.RELEASE'
+                prometheusVersion = '1.0.3'
+            }
+
+            repositories{
+                mavenCentral()
+            }
+
+            dependencies {
+                classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
+            }
+
+        }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+
+group 'com.myretail'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+
+    //MongoDB
+    compile group: 'org.springframework.boot',name: 'spring-boot-starter-data-mongodb', version: '2.0.2.RELEASE'
+
+    // metrics
+    compile("io.micrometer:micrometer-registry-prometheus:${prometheusVersion}")
+
+    //Test
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+ 
+    testCompile group: 'org.springframework', name: 'spring-test', version: '5.1.5.RELEASE'
+
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
+    compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+    testCompile group: 'com.jayway.jsonpath', name: 'json-path-assert', version: '2.4.0'
+    compile group: 'net.minidev', name: 'asm', version: '1.0.2'
+}
+

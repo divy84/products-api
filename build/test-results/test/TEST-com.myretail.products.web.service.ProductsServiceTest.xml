@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.myretail.products.web.service.ProductsServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-03-28T22:14:46" hostname="Divy" time="0.075">
+  <properties/>
+  <testcase name="getProductDetailsTest" classname="com.myretail.products.web.service.ProductsServiceTest" time="0.075"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

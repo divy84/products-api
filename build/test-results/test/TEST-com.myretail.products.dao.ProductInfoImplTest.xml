@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.myretail.products.dao.ProductInfoImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-03-28T22:14:38" hostname="Divy" time="1.673">
+  <properties/>
+  <testcase name="getProductInfoTest" classname="com.myretail.products.dao.ProductInfoImplTest" time="1.673"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
